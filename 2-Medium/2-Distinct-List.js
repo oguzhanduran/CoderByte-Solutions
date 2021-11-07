@@ -15,7 +15,9 @@ function DistinctList(arr) {
     if(arr[i] == arr[i+1]) {
       counter = counter + 1 ;
     }
-  } return counter;
+  } 
+  return counter;
+  
   }
      
   // keep this function call here 

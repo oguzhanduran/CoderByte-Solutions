@@ -6,16 +6,37 @@
 // Input: "Laura sobs"
 // Output: true
 
+// First Method
 function ABCheck(str) { 
 
     // code goes here  
-  
-  let ab = str.search(/a...b/);
-  if(ab > -1){
+    let newStr = str.split("").join("").toLowerCase()
+  let ab = newStr.search(/a...b/); // search methodunda istenen gerçekleşirse eşleştiği yerin index numarasını gerçekleşmezse -1 döner.
+  if(ab > -1){  
     return true
   }else return false
   
   }
-    //  9 puan verdi.
+
   // keep this function call here 
   console.log(ABCheck(readline()));
+
+//  9 Points
+
+// Second Method
+
+function ABCheck(str) { 
+
+  // code goes here
+	var trimmedString = (((str.split(" ")).join("")).toLowerCase()).split("");
+	for (var i = 0; i < trimmedString.length; i++) {
+		if(trimmedString[i] == "a") {
+			if (trimmedString[i + 3] == "b") {
+				return "true";
+				break;
+			};
+		}
+	};
+	return "false"; 
+
+} 

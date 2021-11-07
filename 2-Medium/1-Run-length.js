@@ -23,11 +23,13 @@
         counter++;
         i++;
     }  
-    encode += counter === 1 ? str[i] : counter + str[i];
+    encode = encode + counter + str[i];
   } 
   
   return encode;
   }
+
+  // Döngü çalışması sırasında Continue ile karşılaşıldığı zaman continue’nin altında kalan kısım atlanır ve tekrar döngünün başına dönülür. Break’te ise döngü tamamen kırılıp daha dönecek sayaç’ı olmasına rağmen döngü biter.
      
   // keep this function call here 
   console.log(RunLength(readline()));
@@ -53,7 +55,7 @@
         value = entry;
       }
     }
-      result += counter + '' + entry;
+      result += counter + '' + entry; // Bu satırı yazmazsak "wwwbbbw" için 3w3b gelir. Yani en son bölümde kalan w'yi de dahil etmek için bu satırı yazdık.
   }
   return result;
   }
