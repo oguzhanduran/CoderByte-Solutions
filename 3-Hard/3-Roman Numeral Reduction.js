@@ -4,3 +4,26 @@
 // Output: L
 // Input: "DDLL"
 // Output: MC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
