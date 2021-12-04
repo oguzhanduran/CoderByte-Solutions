@@ -10,8 +10,8 @@
 function Palindrome(str) { 
 
     // code goes here 
-    let regEx = /[\W_]/g
-    let str1 = str.toLowerCase().replace(regEx, "")
+    let regEx = /[\W_]/g 
+    let str1 = str.toLowerCase().replace(regEx, "") // ["neveroddoreven"]
     let str2 = str1.split("").reverse().join("")
     return  str2 === str1 ? "true" : "false"
      
