@@ -11,7 +11,55 @@
 function BlackjackHighest(strArr) { 
 
     // code goes here  
-    return strArr; 
+    function BlackjackHighest(strArr) { 
+
+      let val = new Map([
+        ["",0],
+        ["ace", 1],
+        ["two",2],
+        ["three", 3],
+        ["four",4],
+        ["five",5],
+        ["six",6],
+        ["seven",7],
+        ["eight",8],
+        ["nine",9],
+        ["ten",10],
+        ["jack",10],
+        ["queen",10],
+        ["king",10]
+        ]);
+    
+      let hasAce = false;
+      let highCard="";
+      let hand = 0;
+      let face = "";
+    
+      for (x of strArr) {
+        let card_val = val.get(x);
+        hasAce = hasAce ? true : ((card_val == 1) ? true : false);
+        highCard = (card_val > val.get(highCard)) ? x : highCard;
+    
+        hand += card_val;
+    
+        // J Q K order of importance
+        let face_cards = ["","ten","king","queen","jack"]
+        if ( face_cards.includes(x) ) {
+          face = face_cards.indexOf(x) > face_cards.indexOf(face) ? x : face;
+          highCard = face;
+        };
+    
+      }
+    
+      if (hand>21) return ("above "+ highCard);
+      else if (hand == 21) return ("blackjack "+ highCard); 
+      else if (hand == 11 && hasAce) return ("blackjack ace");
+      else if (hand < 11 && hasAce) return ("below ace");
+      else return ("below "+ highCard);
+    }
+       
+    // keep this function call here 
+    console.log(BlackjackHighest(readline()));
   
   }
      

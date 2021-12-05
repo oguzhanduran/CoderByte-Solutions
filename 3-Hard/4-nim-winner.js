@@ -9,8 +9,24 @@
 
 function NimWinner(arr) { 
 
-    // code goes here  
-    return arr; 
+  // code goes here  
+  const nimSum = arr.reduce((nimSum,num)=>nimSum^num);
+  const kazanan = nimSum ===0 ? 2:1;
+
+  return kazanan; 
+
+}
+   
+// keep this function call here 
+console.log(NimWinner(readline())); 
+     
+ //------------------------------------------------------------------------------------------------------------------
+
+ function NimWinner(arr) { 
+
+  const xor = (p, c) => p^c;
+  
+  return arr.reduce(xor)==0 ? 2 : 1;
   
   }
      
