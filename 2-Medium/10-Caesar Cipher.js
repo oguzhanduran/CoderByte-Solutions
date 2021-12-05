@@ -7,11 +7,25 @@
 // Output: abc
 
 
+
 function CaesarCipher(str,num) { 
 
-    // code goes here  
-    return str; 
+  let newStr = ""
+  let re = /[\W_]/g;
+  for (let i = 0; i < str.length; i++) {
   
+    if (str[i].match(re)) {
+        newStr += str[i]
+     
+    }else {
+      var a = str.charCodeAt(i);
+      a = a + num;
+      a = String.fromCharCode(a)
+      newStr += a 
+      }
+      
+    }
+  return newStr
   }
      
   // keep this function call here 
